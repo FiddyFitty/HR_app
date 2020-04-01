@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RecruitActivity">
+   <children>
+      <MenuBar layoutX="8.0" layoutY="7.0" prefHeight="29.0" prefWidth="593.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField layoutX="7.0" layoutY="29.0" text="Recruit" />
+      <Button layoutX="486.0" layoutY="29.0" mnemonicParsing="false" onAction="#menupage" prefHeight="27.0" prefWidth="57.0" text="menu" />
+      <Button layoutX="409.0" layoutY="29.0" mnemonicParsing="false" onAction="#HRpage" text="HR" />
+      <Button layoutX="339.0" layoutY="29.0" mnemonicParsing="false" onAction="#managerpage" text="Manager" />
+       <Button layoutX="330.0" layoutY="29.0" mnemonicParsing="false" onAction="#update" text="Update" />
+   </children>
+</AnchorPane>

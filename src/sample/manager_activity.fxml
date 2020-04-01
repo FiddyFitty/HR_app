@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar layoutX="7.0" layoutY="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView id="Manager_image_access" fitHeight="63.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="30.0">
+         <image>
+            <Image url="@../../../../Downloads/305966-200.png" />
+         </image></ImageView>
+      <TextField id="Manager_title" editable="false" layoutX="78.0" layoutY="35.0" prefHeight="28.0" prefWidth="125.0" text="Manager Access">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="15.0" layoutY="107.0" prefHeight="28.0" prefWidth="303.0" promptText="Enter employee or recruit ID" />
+      <Button id="mSearchButton" layoutX="343.0" layoutY="80.0" mnemonicParsing="false" onAction="#resultpage" prefHeight="27.0" prefWidth="63.0" text="Search" />
+      <ListView id="searchList" layoutX="39.0" layoutY="168.0" prefHeight="200.0" prefWidth="516.0" />
+      <Button layoutX="496.0" layoutY="36.0" mnemonicParsing="false" onAction="#menupage" text="Menu" />
+      <Button id="recruitButton" layoutX="413.0" layoutY="80.0" mnemonicParsing="false" onAction="#recruitpage" text="Recruit" />
+      <Button id="salaryButton" layoutX="347.0" layoutY="122.0" mnemonicParsing="false" onAction="#salarypage" text="Salary" />
+      <Button id="reportButton" layoutX="406.0" layoutY="122.0" mnemonicParsing="false" onAction="#reportpage" text="Reporting" />
+      <Button id="successButton" layoutX="478.0" layoutY="80.0" mnemonicParsing="false" onAction="#successpage" text="Success planing" />
+      <Button id="trainingButton" layoutX="493.0" layoutY="122.0" mnemonicParsing="false" onAction="#trainingpage" text="Training" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <MenuBar layoutX="7.0" layoutY="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TextField id="Manager_title" editable="false" layoutX="78.0" layoutY="35.0" prefHeight="28.0" prefWidth="124.0" text="HR Access">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <TextField editable="false" layoutX="7.0" layoutY="115.0" prefHeight="27.0" prefWidth="309.0" promptText="Enter employee or recruit ID" />
+        <Button id="mSearchButton" layoutX="334.0" layoutY="97.0" mnemonicParsing="false" onAction="#resultpage" prefHeight="18.0" prefWidth="71.0" text="Search" />
+        <ListView id="searchList" layoutX="9.0" layoutY="168.0" prefHeight="200.0" prefWidth="575.0" />
+      <ImageView fitHeight="71.0" fitWidth="74.0" layoutX="3.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hr.jpg" />
+         </image></ImageView>
+      <Button id="menuButton" layoutX="518.0" layoutY="35.0" mnemonicParsing="false" onAction="#menupage" prefHeight="28.0" prefWidth="60.0" text="Menu" />
+      <Button id="salaryButton" layoutX="334.0" layoutY="129.0" mnemonicParsing="false" onAction="#salarypage" prefHeight="27.0" prefWidth="71.0" text="Salary" />
+      <Button id="recruitButton" layoutX="414.0" layoutY="97.0" mnemonicParsing="false" onAction="#recruitpage" prefHeight="27.0" prefWidth="60.0" text="Recruit" />
+      <Button id="reportButton" layoutX="412.0" layoutY="129.0" mnemonicParsing="false" onAction="#reportpage" prefHeight="27.0" prefWidth="71.0" text="Reports" />
+      <Button id="successButton" layoutX="480.0" layoutY="97.0" mnemonicParsing="false" onAction="#successpage" prefHeight="27.0" prefWidth="117.0" text="Success Planning" />
+      <Button id="trainingButton" layoutX="494.0" layoutY="129.0" mnemonicParsing="false" onAction="#trainingpage" prefHeight="27.0" prefWidth="84.0" text="Training" />
+    </children>
+</AnchorPane>
