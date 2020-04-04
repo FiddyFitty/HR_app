@@ -20,7 +20,7 @@ public class SQL {
 
     }
 
-    public static void POST ( String a ) {
+    public static void POST ( ) {
 
         try {
 
@@ -34,7 +34,7 @@ public class SQL {
             conn.setRequestProperty("Content-Type", "application/json");
 
 
-            String input = "{\"u_manager_id\":\"35\",\"u_first_name\":\"Eddie\",\"u_last_name\":\"Alfred\",\"u_email\":\"steve@gmail.com\"}";
+            String input = "{\"u_manager_id\":\"75\",\"u_first_name\":\"Steve\",\"u_last_name\":\"Alfred\",\"u_email\":\"test@gmail.com\"}";
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
