@@ -14,7 +14,13 @@ public class SQL {
     public static void main(String[] args) {
 
 
+       POST();
 
+
+
+    }
+
+    public static void POST ( String a ) {
 
         try {
 
@@ -22,14 +28,13 @@ public class SQL {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             String userCredentials = "admin:Emblem399*";
             String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
-            conn.setRequestProperty ("Authorization", basicAuth);
+            conn.setRequestProperty("Authorization", basicAuth);
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
 
 
-
-            String input = "{\"u_manager_id\":\"25\",\"u_first_name\":\"steve\",\"u_last_name\":\"Test\",\"u_email\":\"steve@gmail.com\"}";
+            String input = "{\"u_manager_id\":\"35\",\"u_first_name\":\"Eddie\",\"u_last_name\":\"Alfred\",\"u_email\":\"steve@gmail.com\"}";
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
