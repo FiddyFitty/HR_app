@@ -14,13 +14,14 @@ public class SQL {
     public static void main(String[] args) {
 
 
-       POST();
 
+ POST("77","Test77","Test 77","TEST77@gmail.com");
 
 
     }
 
-    public static void POST ( ) {
+    // Add new record
+    public static void POST(String ID, String fname, String lname, String email) {
 
         try {
 
@@ -34,7 +35,9 @@ public class SQL {
             conn.setRequestProperty("Content-Type", "application/json");
 
 
-            String input = "{\"u_manager_id\":\"75\",\"u_first_name\":\"Steve\",\"u_last_name\":\"Alfred\",\"u_email\":\"test@gmail.com\"}";
+            //String input = "{\"u_manager_id\":\"75\",\"u_first_name\":\"Steve\",\"u_last_name\":\"Alfred\",\"u_email\":\"test@gmail.com\"}";
+
+            String input = updateManager(ID,fname,lname, email);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
@@ -67,6 +70,57 @@ public class SQL {
 
         }
 
+
     }
+
+// pull data
+
+
+
+    // update data
+
+    public void PUT(){
+
+
+    }
+
+    //Employee
+/*--------------------------------------------------------------------*/
+public String get_Emp( String ID, String fname, String Lname){
+
+
+        String pattern =
+                "{ \"wins\":\"%s\", \"losses\":\"%s\", \"ties\": \"%s\"}";
+        return String.format(pattern,  ID, fname, Lname );
+    }
+
+
+    public String updateEmp(String ID, String fname, String Lname) {
+
+        String pattern =
+                "{ \"wins\":\"%s\", \"losses\":\"%s\", \"ties\": \"%s\"}";
+        return String.format(pattern,  ID, fname, Lname );
+    }
+    /*--------------------------------------------------------------------*/
+
+//Manager
+    /*--------------------------------------------------------------------*/
+public static String updateManager(String ID, String fname, String Lname, String email) {
+
+    String pattern =
+             "{\"u_manager_id\":\"%s\",\"u_first_name\":\"%s\",\"u_last_name\":\"%s\",\"u_email\":\"%s\"}";
+    return String.format(pattern,  ID, fname, Lname, email );
+}
+
+
+    /*--------------------------------------------------------------------*/
+
+    public static  String updateInterview ( String ID, String Status, String Time, String Description, String Job_ID, String App_ID, String Manager_ID, String Recruiter_ID){
+        String pattern =
+                "{\"u_interview_id\":\"%s\",\"u_interview_status\":\"%s\",\"u_interview_time\":\"%s\",\"u_interview_description\":\"%s\", \"u_jobrequest_id\":\"%s\", \"u_applicaent_id\":\"%s\", \"u_manage_id\":\"%s\", \"u_recruiter_id\":\"%s\" }";
+
+        return String.format(pattern,  ID, Status, Time, Description,Job_ID,App_ID,Manager_ID,Recruiter_ID );
+    }
+
 
 }

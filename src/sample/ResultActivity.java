@@ -2,15 +2,34 @@ package sample;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
 public class ResultActivity extends Application {
+
+    @FXML
+    TextField txtID = new TextField();
+    @FXML
+    TextField txtFname= new TextField();
+    @FXML
+    TextField txtLname = new TextField();
+    @FXML
+    TextField txtEmail = new TextField();
+
+
+    String ID ;
+    String Fname;
+    String Lname;
+    String Email ;
 
 
     public void start(Stage primaryStage) throws Exception{
@@ -18,6 +37,8 @@ public class ResultActivity extends Application {
         primaryStage.setTitle("HR-OSS_Manager");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
+
 
 
 
@@ -59,8 +80,14 @@ public class ResultActivity extends Application {
 
     //update button
     public void update(ActionEvent actionEvent) throws IOException {
+        String ID = txtID.getText();
+        String Fname= txtFname.getText();
+        String Lname = txtLname.getText();
+        String Email = txtEmail.getText();
+
 
         // Todo update sql database
+        SQL.POST(ID,Fname,Lname,Email);
 
 
     }

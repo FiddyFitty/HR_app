@@ -32,8 +32,8 @@
             </font>
         </TextField>
         <ComboBox id="ComboBox" accessibleText="Employee&#10;Rrecruit" layoutX="20.0" layoutY="109.0" prefHeight="37.0" prefWidth="132.0" promptText="Select option" />
-        <TextField layoutX="154.0" layoutY="115.0" prefHeight="21.0" prefWidth="356.0" promptText="Enter employee or recruit ID" />
-        <Button id="mSearchButton" layoutX="520.0" layoutY="114.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="60.0" text="Search" />
+        <TextField fx:id="search" layoutX="154.0" layoutY="115.0" prefHeight="21.0" prefWidth="356.0" promptText="Enter employee or recruit ID" />
+        <Button id="mSearchButton" fx:id="search" layoutX="520.0" layoutY="114.0" mnemonicParsing="false" onAction="#search" prefHeight="21.0" prefWidth="60.0" text="Search" />
         <ListView id="searchList" layoutX="9.0" layoutY="168.0" prefHeight="200.0" prefWidth="575.0" />
         <Button id="menuButton" layoutX="518.0" layoutY="35.0" mnemonicParsing="false" onAction="#menupage" prefHeight="28.0" prefWidth="60.0" text="Menu" />
       <ImageView fitHeight="66.0" fitWidth="75.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">

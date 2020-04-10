@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ResultActivity">
    <children>
       <MenuBar layoutY="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -30,5 +29,14 @@
       <Button layoutX="458.0" layoutY="29.0" mnemonicParsing="false" onAction="#HRpage" text="HR" />
       <Button layoutX="391.0" layoutY="29.0" mnemonicParsing="false" onAction="#managerpage" text="Manager" />
        <Button layoutX="330.0" layoutY="29.0" mnemonicParsing="false" onAction="#update" text="Update" />
+       <Button fx:id="udate" layoutX="516.0" layoutY="347.0" mnemonicParsing="false" onAction="#update" prefHeight="27.0" prefWidth="67.0" text="Update" />
+       <TextField fx:id="txtID" layoutX="49.0" layoutY="113.0" prefHeight="27.0" prefWidth="128.0" />
+       <TextField fx:id="ID" editable="false" layoutX="7.0" layoutY="113.0" prefHeight="27.0" prefWidth="35.0" text="ID" />
+       <TextField editable="false" layoutX="7.0" layoutY="160.0" prefHeight="27.0" prefWidth="78.0" text="First Name" />
+       <TextField editable="false" layoutX="7.0" layoutY="200.0" prefHeight="27.0" prefWidth="78.0" text="Last Name" />
+       <TextField fx:id="txtFname" layoutX="97.0" layoutY="160.0" />
+       <TextField fx:id="txtLname" layoutX="97.0" layoutY="200.0" />
+       <TextField layoutX="10.0" layoutY="239.0" prefHeight="27.0" prefWidth="78.0" text="E-mail" />
+       <TextField fx:id="txtEmail" layoutX="97.0" layoutY="239.0" />
    </children>
 </AnchorPane>
