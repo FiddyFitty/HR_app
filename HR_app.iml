@@ -9,5 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.httpobjects.jackson:httpobjects-jackson:0.10.0" level="application" />
     <orderEntry type="library" name="org.apache:apache-jar-resource-bundle:1.4" level="application" />
+    <orderEntry type="library" name="com.github.cliftonlabs:json-simple:3.1.1" level="application" />
+    <orderEntry type="library" name="com.github.cliftonlabs:json-simple:2.3.1" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.8.6" level="project" />
   </component>
 </module>

@@ -27,7 +27,7 @@ public class SQLDELETE {
 
 
     }
-    /*
+
     public static void Delete() throws IOException {
 
 
@@ -45,7 +45,7 @@ public class SQLDELETE {
         out.close();
 
         conn.connect();
-    }*/
+    }
     ///String ID, String fname, String lname, String email
 
     public static void delete()  {

@@ -1,23 +1,31 @@
 package sample;
 
 import java.awt.*;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.*;
 import java.util.Base64;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Base64;
+import java.io.OutputStreamWriter;
+
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.github.cliftonlabs.json_simple.JsonObject;
+
+import netscape.javascript.JSObject;
 
 public class SQLUPDATE {
+
     private Integer id;
     private String name;
     private String address;
 
 
+
+
     public static void main(String[] args) {
+
+        PUT();
 
 
     }
@@ -27,32 +35,63 @@ public class SQLUPDATE {
 
         try {
 
-            URL url = new URL("https://dev98653.service-now.com/api/now/table/u_managers");
+            URL url = new URL("https://dev81131.service-now.com/api/now/table/u_manager/c51184892f5050102f7955272799b6f4");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             String userCredentials = "admin:Emblem399*";
             String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
             conn.setRequestProperty("Authorization", basicAuth);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
             conn.setRequestMethod("PUT");
-            conn.setRequestProperty("Accept", "application/json");
+            conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 
-            if (conn.getResponseCode() != 200) {
+            JsonObject jsonObject = new JsonObject();
+                    jsonObject.put("u_first_name","Fuck this exercise");
+
+                    String sample = "{\"u_first_name\":\"Test 3\"}";
+
+
+            try(OutputStream os = conn.getOutputStream()) {
+                byte[] input = sample.getBytes("UTF-8");
+                os.write(input);
+            }
+
+            try(BufferedReader br = new BufferedReader(
+                    new InputStreamReader(conn.getInputStream(), "utf-8"))) {
+                StringBuilder response = new StringBuilder();
+                String responseLine = null;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+                System.out.println(response.toString());
+            }
+
+
+
+           /* if (conn.getResponseCode() == 200) {
                 throw new RuntimeException("Failed : HTTP error code : "
                         + conn.getResponseCode());
             }
 
-            OutputStreamWriter out = new OutputStreamWriter(
-                    conn.getOutputStream());
-            out.write("Resource content");
-            out.close();
-            conn.getInputStream();
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
+            String output;
+
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);
+            }
+
+            OutputStream os = conn.getOutputStream();
+            os.write(output.getBytes());
+            os.flush();
+
+
+            System.out.println("Output from Server .... \n");
 
 
 
-
-
-
-
-
+            conn.disconnect();*/
 
         } catch (MalformedURLException e) {
 
@@ -65,7 +104,7 @@ public class SQLUPDATE {
         }
 
 
-        }
+    }
 
 
         public static String updatemanager(){
@@ -81,6 +120,9 @@ public class SQLUPDATE {
 
         return pattern;
         }
+
+
+
 
 
 }

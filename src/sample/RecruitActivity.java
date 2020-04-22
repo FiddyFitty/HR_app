@@ -44,12 +44,6 @@ public class RecruitActivity extends Application {
         primaryStage.show();
 
 
-        update.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                
-                SQL.POST(ID,Fname,Lname,Email);
-            }
-        });
 
 
 

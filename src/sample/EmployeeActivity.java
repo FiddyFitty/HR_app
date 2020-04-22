@@ -13,13 +13,38 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EmployeeActivity extends Application {
+public class EmployeeActivity  {
     @FXML
     TextField search= new TextField();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("manager_activity.fxml"));
+    @FXML
+    TextField txtID = new TextField();
+    @FXML
+    TextField txtFname= new TextField();
+    @FXML
+    TextField txtLname = new TextField();
+    @FXML
+    TextField txtEmail = new TextField();
+    @FXML
+    TextField txtJob = new TextField();
+    @FXML
+    TextField txtSalary = new TextField();
+    @FXML
+    TextField txtStatus = new TextField();
+    @FXML
+    TextField txtNote = new TextField();
+    @FXML
+    TextField txtPerformance = new TextField();
+    @FXML
+    TextField txtAddress = new TextField();
+    @FXML
+    TextField txtManager = new TextField();
+    @FXML
+    TextField txtPhone = new TextField();
+
+    //@Override
+    /*public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("employee_activity.fxml"));
         primaryStage.setTitle("HR-OSS_Manager");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
@@ -27,7 +52,7 @@ public class EmployeeActivity extends Application {
 
 
 
-    }
+    }*/
 
     public void menupage(ActionEvent actionEvent) throws IOException {
         Parent ManagerParent = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -46,6 +71,24 @@ public class EmployeeActivity extends Application {
         // Todo update sql database
         //SQL.GET(ID);
 
+
+    }
+    public void New(ActionEvent actionEvent) throws IOException {
+        //String ID = txtID.getText();
+        String Fname= txtFname.getText();
+        String Lname = txtLname.getText();
+        String Email = txtEmail.getText();
+
+        String Address = txtAddress.getText();
+
+        String Status = txtStatus.getText();
+        String Note = txtNote.getText();
+
+        String Phone =txtPhone.getText();
+
+
+        // Todo update sql database
+        SQL.POST(Fname,Lname,Email,Address,Phone,Note,Status);
 
     }
 

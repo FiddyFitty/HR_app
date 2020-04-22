@@ -44,5 +44,6 @@
       <Button id="reportButton" layoutX="412.0" layoutY="129.0" mnemonicParsing="false" onAction="#reportpage" prefHeight="27.0" prefWidth="71.0" text="Reports" />
       <Button id="successButton" layoutX="480.0" layoutY="97.0" mnemonicParsing="false" onAction="#successpage" prefHeight="27.0" prefWidth="117.0" text="Success Planning" />
       <Button id="trainingButton" layoutX="494.0" layoutY="129.0" mnemonicParsing="false" onAction="#trainingpage" prefHeight="27.0" prefWidth="84.0" text="Training" />
+      <Button fx:id="btnNew" layoutX="334.0" layoutY="65.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text="New" />
     </children>
 </AnchorPane>
