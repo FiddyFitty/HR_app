@@ -11,16 +11,17 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
 public class EmployeeActivity  {
     @FXML
-    TextField search= new TextField();
+    TextField txtSearch= new TextField();
 
     @FXML
     TextField txtID = new TextField();
     @FXML
-    TextField txtFname= new TextField();
+    TextField txtFname;
     @FXML
     TextField txtLname = new TextField();
     @FXML
@@ -41,6 +42,10 @@ public class EmployeeActivity  {
     TextField txtManager = new TextField();
     @FXML
     TextField txtPhone = new TextField();
+
+    Data data = new Data();
+    String sysID;
+
 
     //@Override
     /*public void start(Stage primaryStage) throws Exception{
@@ -64,7 +69,8 @@ public class EmployeeActivity  {
     }
 
     public void update(ActionEvent actionEvent) throws IOException {
-        String ID = search.getText();
+        String sysIDupdate = sysID;
+        SQLUPDATE.PUT(sysIDupdate);
 
 
 
@@ -89,6 +95,37 @@ public class EmployeeActivity  {
 
         // Todo update sql database
         SQL.POST(Fname,Lname,Email,Address,Phone,Note,Status);
+
+    }
+
+    public  void SearchID(ActionEvent actionEvent) throws IOException {
+
+        String ID = txtSearch.getText();
+
+        SQLGET.GET(ID);
+
+        System.out.println("Loading");
+
+        String Fname= data.getfname();
+        String Lname = data.getlname();;
+        String Email = data.getemail();
+        String Address = data.getaddress();;
+        String Status = data.getstatus();
+        String Note = data.getnote();
+        String Phone =data.getphone();
+
+        txtFname.setText(SQLGET.fname);
+        txtLname.setText(SQLGET.lname);
+        txtEmail.setText(SQLGET.email);
+        txtAddress.setText(SQLGET.address);
+        txtStatus.setText(SQLGET.status);
+        txtNote.setText(SQLGET.note);
+        txtPhone.setText(SQLGET.phone);
+        txtNote.setText(SQLGET.note);
+
+        String sysID = SQLGET.sysID;
+
+
 
     }
 

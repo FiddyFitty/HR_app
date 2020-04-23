@@ -25,17 +25,17 @@ public class SQLUPDATE {
 
     public static void main(String[] args) {
 
-        PUT();
+        //PUT("c51184892f5050102f7955272799b6f4");
 
 
     }
 
-    public static void PUT()  {
+    public static void PUT(String ID)  {
 
 
         try {
 
-            URL url = new URL("https://dev81131.service-now.com/api/now/table/u_manager/c51184892f5050102f7955272799b6f4");
+            URL url = new URL("https://dev81131.service-now.com/api/now/table/u_manager/"+ID);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             String userCredentials = "admin:Emblem399*";
             String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));

@@ -16,7 +16,7 @@ public class Data{
     public void setemail(String email) { this.email = email; }
 
     public String  getaddress() { return address; }
-    public void setfaddress(String address) { this.address = address; }
+    public void setaddress(String address) { this.address = address; }
 
     public String  getjob() { return job; }
     public void setfjob(String job) { this.job = job; }
@@ -39,14 +39,7 @@ public class Data{
     public String  getsysID() { return sysID; }
     public void setsysID(String sysID) { this.sysID = sysID; }
 
-    public  String getdata(){
-        String fname = "",  lname = "",  email ="",  address="",  job="", manager="",  note="",  performance="",  phone="",  salary="",  status="",id="",sysID="";
 
-String pattern = "u_number:%s,u_email:%s,u_address:%s,u_job:%s,u_last_name:%s,sys_id: %s, u_first_name:%s, u_salary:%s,u_performance:%s,u_phone_number:%s,u_status:%s,u_manager:%s, u_notes:%s";
-        //"{\"u_first_name\":\"%s\",\"u_last_name\":\"%s\",\"u_email\":\"%s\",\"u_address\":\"%s\",\"u_job\":\"%s\",\"u_manager\":\"%s\",\"u_notes\":\"%s\",\"u_performance\":\"%s\",\"u_phone\":\"%s\",\"u_salary\":\"%s\",\"u_status\":\"%s\"}";
-
-        return String.format(pattern,id ,email, address,job,lname,sysID,fname, salary,performance,phone,status,manager,note);
-    }
 
 
 
