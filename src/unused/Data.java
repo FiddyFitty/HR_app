@@ -1,4 +1,4 @@
-package sample;
+package unused;
 
 public class Data{
     String fname,  lname,  email,  address,  job, manager,  note,  performance,  phone,  salary,  status,id,sysID;

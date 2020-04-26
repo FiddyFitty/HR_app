@@ -1,54 +1,24 @@
-package sample;
+package unused;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 
-
-import java.awt.*;
 import java.io.IOException;
-import sample.SQL.*;
 
-public class RecruitActivity extends Application {
-
-
-    @FXML
-    TextField txtID = new TextField();
-    @FXML
-    TextField txtFname= new TextField();
-    @FXML
-    javafx.scene.control.TextField txtLname = new javafx.scene.control.TextField();
-    @FXML
-    TextField txtEmail = new TextField();
-    Button update = new Button("update");
-
-    String ID = txtID.toString();
-    String Fname= txtFname.toString();
-    String Lname = txtLname.toString();
-    String Email = txtEmail.toString();
+public class ReportingActivity extends Application {
 
 
-    @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("recruit_activity.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("six.reporting_activity.fxml"));
         primaryStage.setTitle("HR-OSS_Manager");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-
-
-
-
-
-       
 
 
     }
@@ -56,6 +26,8 @@ public class RecruitActivity extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 
     // back to HR
     public void HRpage(ActionEvent actionEvent) throws IOException {

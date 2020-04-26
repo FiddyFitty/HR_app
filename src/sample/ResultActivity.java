@@ -16,6 +16,8 @@ import java.awt.*;
 import java.io.IOException;
 
 public class ResultActivity  {
+    @FXML
+    TextField txtSearch= new TextField();
 
     @FXML
     TextField txtID = new TextField();
@@ -41,6 +43,9 @@ public class ResultActivity  {
     TextField txtManager = new TextField();
     @FXML
     TextField txtPhone = new TextField();
+    String sysID;
+
+
 
 
 
@@ -78,18 +83,6 @@ public class ResultActivity  {
         window.show();
     }
 
-    //update button
-    public void update(ActionEvent actionEvent) throws IOException {
-        //String ID = txtID.getText();
-        String Fname= txtFname.getText();
-        String Lname = txtLname.getText();
-        String Email = txtEmail.getText();
-
-
-        // Todo update sql database
-        //SQL.POST(Fname,Lname,Email);
-
-    }
 
     public void New(ActionEvent actionEvent) throws IOException {
         //String ID = txtID.getText();
@@ -108,6 +101,52 @@ public class ResultActivity  {
 
         // Todo update sql database
         SQL.POSTHR(Fname,Lname,Email,Address,Job,Manager,Note,Performance,Phone,Salary,Status);
+
+    }
+
+    public  void updateButton(ActionEvent actionEvent) throws IOException {
+
+        String fname = txtFname.getText();
+        String lname = txtLname.getText();
+        String Email = txtEmail.getText();
+        String Address= txtAddress.getText();
+        String Job = txtJob.getText();
+        String Note = txtNote.getText();
+        String Phone = txtPhone.getText();
+        String Manager =txtManager.getText();
+        String Salary = txtSalary.getText();
+        String Status = txtStatus.getText();
+
+        String Performance = txtPerformance.getText();
+
+
+        SQLUPDATE.PUT(sysID,fname,lname,Email,Address,Job,Manager,Note,Performance,Phone,Salary,Status);
+    }
+
+    public  void SearchID(ActionEvent actionEvent) throws IOException {
+
+        String ID = txtSearch.getText();
+
+        SQLGET.GET(ID);
+
+        txtID.setText(SQLGET.id);
+
+        txtFname.setText(SQLGET.fname);
+        txtLname.setText(SQLGET.lname);
+        txtEmail.setText(SQLGET.email);
+        txtAddress.setText(SQLGET.address);
+        txtStatus.setText(SQLGET.status);
+        txtNote.setText(SQLGET.note);
+        txtPhone.setText(SQLGET.phone);
+        txtNote.setText(SQLGET.note);
+        txtJob.setText(SQLGET.job);
+        txtManager.setText(SQLGET.manager);
+        txtSalary.setText(SQLGET.salary);
+        txtPerformance.setText(SQLGET.performance);
+
+        sysID = SQLGET.sysID;
+
+
 
     }
 }

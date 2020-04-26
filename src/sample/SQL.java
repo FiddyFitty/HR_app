@@ -87,9 +87,7 @@ POSTHR("john","john","gmail","address","Job","Jake", "vacation","87%","212121212
             conn.setRequestProperty("Content-Type", "application/json");
 
 
-            //String input = "{\"u_manager_id\":\"75\",\"u_first_name\":\"Steve\",\"u_last_name\":\"Alfred\",\"u_email\":\"test@gmail.com\"}";
-
-            String input = updateManager(fname,lname, email, address, job, manager, note,performance,phone,salary,status);
+            String input = updateRecord(fname,lname, email, address, job, manager, note,performance,phone,salary,status);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
@@ -130,12 +128,6 @@ POSTHR("john","john","gmail","address","Job","Jake", "vacation","87%","212121212
 
 
 
-    // update data
-
-    public void PUT(){
-
-
-    }
 
     //Employee
 /*--------------------------------------------------------------------*/
@@ -152,7 +144,7 @@ POSTHR("john","john","gmail","address","Job","Jake", "vacation","87%","212121212
 
 //Manager/ HR
     /*--------------------------------------------------------------------*/
-public static String updateManager (String fname, String lname, String email, String address, String job, String manager, String note, String performance, String phone, String salary, String status) {
+public static String updateRecord (String fname, String lname, String email, String address, String job, String manager, String note, String performance, String phone, String salary, String status) {
 
     String pattern =
              "{\"u_first_name\":\"%s\",\"u_last_name\":\"%s\",\"u_email\":\"%s\",\"u_address\":\"%s\",\"u_job\":\"%s\",\"u_manager\":\"%s\",\"u_notes\":\"%s\",\"u_performance\":\"%s\",\"u_phone\":\"%s\",\"u_salary\":\"%s\",\"u_status\":\"%s\"}";
@@ -160,14 +152,6 @@ public static String updateManager (String fname, String lname, String email, St
 }
 
 
-    /*--------------------------------------------------------------------*/
-
-    public static  String updateInterview ( String ID, String Status, String Time, String Description, String Job_ID, String App_ID, String Manager_ID, String Recruiter_ID){
-        String pattern =
-                "{\"u_interview_id\":\"%s\",\"u_interview_status\":\"%s\",\"u_interview_time\":\"%s\",\"u_interview_description\":\"%s\", \"u_jobrequest_id\":\"%s\", \"u_applicaent_id\":\"%s\", \"u_manage_id\":\"%s\", \"u_recruiter_id\":\"%s\" }";
-
-        return String.format(pattern,  ID, Status, Time, Description,Job_ID,App_ID,Manager_ID,Recruiter_ID );
-    }
 
 
 }

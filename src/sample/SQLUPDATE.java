@@ -30,14 +30,14 @@ public class SQLUPDATE {
 
     }
 
-    public static void PUT(String ID)  {
+    public static void PUT(String sysID, String fname, String lname, String email, String address, String job, String manager, String note, String performance, String phone, String salary, String status)  {
 
 
         try {
 
-            URL url = new URL("https://dev81131.service-now.com/api/now/table/u_manager/"+ID);
+            URL url = new URL("https://dev20047.service-now.com/api/now/table/u_people/"+sysID);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            String userCredentials = "admin:Emblem399*";
+            String userCredentials = "admin:2djtyH7PkFTF";
             String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
             conn.setRequestProperty("Authorization", basicAuth);
             conn.setDoOutput(true);
@@ -45,10 +45,7 @@ public class SQLUPDATE {
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 
-            JsonObject jsonObject = new JsonObject();
-                    jsonObject.put("u_first_name","Fuck this exercise");
-
-                    String sample = "{\"u_first_name\":\"Test 3\"}";
+                   String sample = updateRecord(fname,lname, email,address,job,manager,note,performance,phone,salary,status);
 
 
             try(OutputStream os = conn.getOutputStream()) {
@@ -107,22 +104,73 @@ public class SQLUPDATE {
     }
 
 
-        public static String updatemanager(){
-            String pattern = "{\r\n" +
-                    "  \"firstName\": \"Ram\",\r\n" +
-                    "  \"lastName\": \"Jadhav\",\r\n" +
-                    "  \"emailId\": \"ramesh1234@gmail.com\",\r\n" +
-                    "  \"createdAt\": \"2018-09-11T11:19:56.000+0000\",\r\n" +
-                    "  \"createdBy\": \"Ramesh\",\r\n" +
-                    "  \"updatedAt\": \"2018-09-11T11:26:31.000+0000\",\r\n" +
-                    "  \"updatedby\": \"Ramesh\"\r\n" +
-                    "}";
+    public static void PUTemp(String sysID, String fname, String lname, String email, String address, String phone , String status)  {
 
-        return pattern;
+
+        try {
+
+            URL url = new URL("https://dev20047.service-now.com/api/now/table/u_people/"+sysID);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            String userCredentials = "admin:2djtyH7PkFTF";
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            conn.setRequestProperty("Authorization", basicAuth);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            conn.setRequestMethod("PUT");
+            conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.put("u_first_name","Fuck this exercise");
+
+            //String sample = "{\"u_first_name\":\"Test 3\"}";
+            String sample= updateRecordemp(fname,lname, email, address,phone,status);
+
+
+            try(OutputStream os = conn.getOutputStream()) {
+                byte[] input = sample.getBytes("UTF-8");
+                os.write(input);
+            }
+
+            try(BufferedReader br = new BufferedReader(
+                    new InputStreamReader(conn.getInputStream(), "utf-8"))) {
+                StringBuilder response = new StringBuilder();
+                String responseLine = null;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+                System.out.println(response.toString());
+            }
+
+
+
+
+
+        } catch (MalformedURLException e) {
+
+            e.printStackTrace();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
         }
 
 
+    }
 
 
+    public static String updateRecordemp (String fname, String lname, String email, String address, String phone, String status ) {
+
+        String pattern =
+                "{\"u_first_name\":\"%s\",\"u_last_name\":\"%s\",\"u_email\":\"%s\",\"u_address\":\"%s\",\"u_phone_number\":\"%s\",\"u_status\":\"%s\"}";
+        return String.format(pattern, fname,lname, email, address,phone, status);
+    }
+
+    public static String updateRecord (String fname, String lname, String email, String address, String job, String manager, String note, String performance, String phone, String salary, String status) {
+
+        String pattern =
+                "{\"u_first_name\":\"%s\",\"u_last_name\":\"%s\",\"u_email\":\"%s\",\"u_address\":\"%s\",\"u_job\":\"%s\",\"u_manager\":\"%s\",\"u_notes\":\"%s\",\"u_performance\":\"%s\",\"u_phone_number\":\"%s\",\"u_salary\":\"%s\",\"u_status\":\"%s\"}";
+        return String.format(pattern, fname,lname, email, address, job, manager, note,performance,phone,salary,status);
+    }
 
 }

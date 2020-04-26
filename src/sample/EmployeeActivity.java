@@ -1,15 +1,14 @@
 package sample;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import unused.Data;
 
 
 import java.io.IOException;
@@ -69,13 +68,16 @@ public class EmployeeActivity  {
     }
 
     public void update(ActionEvent actionEvent) throws IOException {
-        String sysIDupdate = sysID;
-        SQLUPDATE.PUT(sysIDupdate);
+        String fname = txtFname.getText();
+        String lname = txtLname.getText();
+        String Email = txtEmail.getText();
+        String Address= txtAddress.getText();
+        String Status = txtStatus.getText();
+
+        String Phone = txtPhone.getText();
 
 
-
-        // Todo update sql database
-        //SQL.GET(ID);
+        SQLUPDATE.PUTemp(sysID,fname,lname,Email,Address,Phone,Status);
 
 
     }
@@ -106,13 +108,7 @@ public class EmployeeActivity  {
 
         System.out.println("Loading");
 
-        String Fname= data.getfname();
-        String Lname = data.getlname();;
-        String Email = data.getemail();
-        String Address = data.getaddress();;
-        String Status = data.getstatus();
-        String Note = data.getnote();
-        String Phone =data.getphone();
+
 
         txtFname.setText(SQLGET.fname);
         txtLname.setText(SQLGET.lname);
@@ -123,11 +119,13 @@ public class EmployeeActivity  {
         txtPhone.setText(SQLGET.phone);
         txtNote.setText(SQLGET.note);
 
-        String sysID = SQLGET.sysID;
+        sysID = SQLGET.sysID;
 
 
 
     }
+
+
 
 
 }

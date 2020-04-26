@@ -1,4 +1,4 @@
-package sample;
+package unused;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -10,10 +10,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TrainingActivity extends Application {
-
+public class SuccessActivity extends Application {
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("training_activity.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../unused/success_activity.fxml"));
         primaryStage.setTitle("HR-OSS_Manager");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
@@ -25,6 +24,7 @@ public class TrainingActivity extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 
     // back to HR
     public void HRpage(ActionEvent actionEvent) throws IOException {

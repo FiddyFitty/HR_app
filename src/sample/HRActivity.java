@@ -38,7 +38,7 @@ public class HRActivity {
 
     public void recruitpage(ActionEvent actionEvent) throws IOException {
 
-        Parent ManagerParent = FXMLLoader.load(getClass().getResource("recruit_activity.fxml"));
+        Parent ManagerParent = FXMLLoader.load(getClass().getResource("../unused/recruit_activity.fxml"));
         Scene ManagerScence = new Scene(ManagerParent);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -49,7 +49,7 @@ public class HRActivity {
     }
     public void reportpage(ActionEvent actionEvent) throws IOException {
 
-        Parent ManagerParent = FXMLLoader.load(getClass().getResource("reporting_activity.fxml"));
+        Parent ManagerParent = FXMLLoader.load(getClass().getResource("../unused/reporting_activity.fxml"));
         Scene ManagerScence = new Scene(ManagerParent);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -85,7 +85,7 @@ public class HRActivity {
     }
     public void successpage(ActionEvent actionEvent) throws IOException {
 
-        Parent ManagerParent = FXMLLoader.load(getClass().getResource("success_activity.fxml"));
+        Parent ManagerParent = FXMLLoader.load(getClass().getResource("../unused/success_activity.fxml"));
         Scene ManagerScence = new Scene(ManagerParent);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -96,7 +96,7 @@ public class HRActivity {
     }
     public void trainingpage(ActionEvent actionEvent) throws IOException {
 
-        Parent ManagerParent = FXMLLoader.load(getClass().getResource("training_activity.fxml"));
+        Parent ManagerParent = FXMLLoader.load(getClass().getResource("../unused/training_activity.fxml"));
         Scene ManagerScence = new Scene(ManagerParent);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
